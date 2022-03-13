@@ -11,7 +11,6 @@
         background-color: aqua;
         color: black;
         text-align: center;
-        margin-top: 5%;
       }
       h3, a{
         color: black;
@@ -30,9 +29,32 @@
         border: 1px solid black;
         padding: 0;
       }
+      @keyframes example {
+        from {background-color: blue;}
+        to {background-color: aqua;}
+      }
+      .anima {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        animation-name: example;
+        animation-duration: 4s;
+        height: 100vh;
+        width: 100vw;
+        text-align: center;
+        padding: 15% 0;
+      }
+      .container{
+        display: none;
+        margin-top: 5%;
+      }
     </style>
   </head>
   <body>
+    <div class="anima">
+      <h1>Welcome to Board Infinity</h1>
+      <img style="height: 200px; width: 200px; border-radius: 50%;"src="boardinfinity-logo.jpg" alt="">
+    </div>
     <div class="container">
       <h1>Boardinfinity</h1>
       <div class="row" style="margin-top: 10vh;">
@@ -91,5 +113,17 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      function myFunc(){
+        setTimeout(disp,4000);
+      }
+      function disp(){
+        var x = document.getElementsByClassName("anima");
+        x[0].style.display = "none";
+        var y = document.getElementsByClassName("container");
+        y[0].style.display = "block";
+      }
+      myFunc();
+    </script>
   </body>
 </html>
